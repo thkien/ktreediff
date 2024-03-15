@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "treediff"
+dynamic = ["version"]
+authors = [
+    { name = "thkien", email = "thkien@gmail.com" },
+]
+
+description = "A tools for comparing files in 2 directories"
+readme = "README.md"
+keywords = ["diff"]
+license = { text = "MIT License" }
+dependencies = []
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Utilities",
+]
+
+[project.optional-dependencies]
+dev = []
+docs = []
+
+[project.scripts]
+treediff = "treediff.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = { attr = "treediff.version.__version__" }
+
