@@ -1,8 +1,19 @@
-# treediff
+# ktreediff
 
-An utility for comparing files in 2 folders
+An utility for comparing files in directories.
 
-## Usage:
+Pypi rejected the package name 'treediff' so I had to change package name to 'ktreediff'
+but 'treediff' command is available.
+
+## How to install
+
+To install just run the following command. There's no external dependencies required.
+
+```
+$ pip install ktreediff
+```
+
+## Command line options
 ```
 usage: $ treediff [options...] <left> <right>
   Note: <left> and <right> can be a pair of files or a pair of directories
@@ -79,7 +90,7 @@ dir_a/               !=  dir_b/
 
 ```
 
-To compare only *.txt files in 2 directories, use `-f/--filter option`. 
+To compare only *.txt files in 2 directories, use `-f/--filter` option. 
 Note: You can specify multiple file types also, for example: `-f .txt .log`
 
 ```
@@ -100,10 +111,10 @@ Or you can also just compare 2 files
 ```
 $ treediff dir_a\file_1.txt dir_b\file_1.txt
 
-INFO: 2 files are identical at binary level
+2 files are identical at binary level
 ```
 
-## How to build and install
+## How to build and install locally
 
 To build this project, run the following commands
 
@@ -120,7 +131,7 @@ $ python -m build             <-- build this project
 After build this project, use the following command to install
 
 ```
-$ pip install dist\treediff-<version>-py3-none-any.whl --force-reinstall
+$ pip install dist\ktreediff-<version>-py3-none-any.whl --force-reinstall
 ```
 
 
