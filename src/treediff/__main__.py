@@ -12,7 +12,7 @@ logger = logging.getLogger('treediff')
 
 def setup_log(log_level="info"):
 
-    LOG_FORMAT_SIMPLE = '%(levelname)s: %(message)s'
+    LOG_FORMAT_SIMPLE = '%(message)s'
     LOG_FORMAT_DEBUG = '%(asctime)s: %(levelname)s: %(funcName)s(): %(lineno)d: %(message)s'
 
     if log_level == "debug":
@@ -33,8 +33,30 @@ def setup_log(log_level="info"):
     logging.basicConfig(level=ll, format=lf)
 
 
+_HELP="""$ treediff [options...] <left> <right>
+  Note: <left> and <right> can be a pair of files or a pair of directories
+
+Examples:
+To compare files in 2 directories dir_a and dir_b
+  $ treediff dir_a dir_b
+
+To compare files in 2 directories dir_a and dir_b, included subfolders
+  $ treediff dir_a dir_b --recursive
+
+To compare specific files (*.txt, *.psd) in 2 directories dir_a and dir_b
+  $ treediff --filter .txt .psd dir_a dir_b
+
+
+Exit code:
+ 0  : directories or files are the same
+ 1  : directories or files are different
+ 255: an error/exception occured
+
+"""
+
+
 def _main():
-    parser = argparse.ArgumentParser(description='Utility for comparing directory/file')
+    parser = argparse.ArgumentParser(description='An utility for comparing directory/file', usage=_HELP)
 
     parser.add_argument('left'
                         , type=str
@@ -99,6 +121,8 @@ def _main():
                 sys.exit(1)
             else:
                 sys.exit(0)
+    else:
+        raise RuntimeWarning("Invalid parameters")
 
 def main():
     try:
