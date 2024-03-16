@@ -1,6 +1,5 @@
 import os
 import unicodedata
-import hashlib
 
 
 class Util:

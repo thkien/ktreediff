@@ -1,8 +1,8 @@
 import os
 import dataclasses
 from types import NoneType
-from treediff.util import Util
-from treediff.node import Node
+from ktreediff.util import Util
+from ktreediff.node import Node
 
 
 

@@ -3,13 +3,13 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "treediff"
+name = "ktreediff"
 dynamic = ["version"]
 authors = [
     { name = "thkien", email = "thkien@gmail.com" },
 ]
 
-description = "A tools for comparing files in 2 directories"
+description = "An utility for comparing files in 2 directories"
 readme = "README.md"
 keywords = ["diff"]
 license = { text = "MIT License" }
@@ -35,11 +35,11 @@ dev = []
 docs = []
 
 [project.scripts]
-treediff = "treediff.__main__:main"
+treediff = "ktreediff.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.dynamic]
-version = { attr = "treediff.version.__version__" }
+version = { attr = "ktreediff.version.__version__" }
 

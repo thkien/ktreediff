@@ -2,8 +2,8 @@ import os
 import sys
 import logging
 import argparse
-from treediff.file import DiffNode
-from treediff.util import Util
+from ktreediff.file import DiffNode
+from ktreediff.util import Util
 
 
 logger = logging.getLogger('treediff')
@@ -56,7 +56,7 @@ Exit code:
 
 
 def _main():
-    parser = argparse.ArgumentParser(description='An utility for comparing directory/file', usage=_HELP)
+    parser = argparse.ArgumentParser(description='An utility for comparing directories/files', usage=_HELP)
 
     parser.add_argument('left'
                         , type=str
