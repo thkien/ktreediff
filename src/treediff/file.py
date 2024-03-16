@@ -129,11 +129,11 @@ class DiffNode(Node):
         
         for item in left_only:
             path = os.path.join(self.left, item)
-            self.append(DiffNode(self, path, None))
+            self.add_child(DiffNode(self, path, None))
             
         for item in right_only:
             path = os.path.join(self.right, item)
-            self.append(DiffNode(self, path, None))
+            self.add_child(DiffNode(self, path, None))
             
         for item in same:
             left_path = os.path.join(self.left, item)
